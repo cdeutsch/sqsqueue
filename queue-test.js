@@ -10,30 +10,44 @@ sqsqueue.init(config)
         console.log('hello ' + task);
         setTimeout(function() {
             
-            callback();    
-        }, 1000);
+            callback();
+        }, 3000);
         
     }, 1);
-
-    queue.drain = function() {
-        console.log('drained');
-    }
 
     queue.push('hi1');
     queue.push('hi2');
     queue.push('hi3');
+    queue.push('hi4');
+    queue.push('hi5');
+    queue.push('hi6');
+    queue.push('hi7');
+    queue.push('hi8');
 
-    var xx = 3;
+setTimeout(function() {
+    console.log('iphits:' + sqsqueue.iphits);
+    console.log('ipGohits:' + sqsqueue.ipGohits);
+    console.log('receiveCalls:' + sqsqueue.receiveCalls);
+}, 30000);
 
-    setInterval(function() {
+    var xx = 6;
+/*
+    var interval = setInterval(function() {
         xx += 1;
         queue.push('hi' + xx);
         xx += 1;
         queue.push('hi' + xx);
         xx += 1;
         queue.push('hi' + xx);
-    },5000);
 
+        if (xx > 20) {
+            console.log('iphits:' + sqsqueue.iphits);
+            console.log('ipGohits:' + sqsqueue.ipGohits);
+            console.log('receiveCalls:' + sqsqueue.receiveCalls);
+            clearInterval(interval);
+        }
+    },3000);
+*/
 });
 
 // throw unhandled RSVP errors.
