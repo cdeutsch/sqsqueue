@@ -14,14 +14,23 @@ var queue = sqsqueue.queue(function (task, callback) {
 
 queue.init(config);
 
-queue.push('hi1');
-queue.push('hi2');
-queue.push('hi3');
-queue.push('hi4');
-queue.push('hi5');
-queue.push('hi6');
-queue.push('hi7');
-queue.push('hi8');
+function showId(error, messageId) {
+    if (error) {
+        throw error;
+    }
+    else {
+        console.log(messageId);
+    }
+}
+
+queue.push('hi1', showId);
+queue.push('hi2', showId);
+queue.push('hi3', showId);
+queue.push('hi4', showId);
+queue.push('hi5', showId);
+queue.push('hi6', showId);
+queue.push('hi7', showId);
+queue.push('hi8', showId);
 
 setTimeout(function() {
     console.log('iphits:' + sqsqueue.iphits);
