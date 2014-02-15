@@ -4,7 +4,7 @@ var aws = require("aws-lib");
 //var RSVP = require('rsvp');
 
 var queue = sqsqueue.queue(function (task, callback) {
-    console.log('hello ' + task);
+    console.log(task.messageId + ' : ' + task.data);
     setTimeout(function() {
         
         callback();
