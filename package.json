@@ -1,0 +1,6 @@
+{
+  "name": "sqsqueue",
+  "dependencies": {
+    "aws-lib": "~0.3.0"
+  }
+}
