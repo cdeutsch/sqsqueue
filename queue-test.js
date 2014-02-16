@@ -24,6 +24,7 @@ function showId(error, messageId) {
 }
 
 queue.push('hi1', showId);
+console.log('1');
 queue.push('hi2', showId);
 queue.push('hi3', showId);
 queue.push('hi4', showId);
@@ -31,6 +32,7 @@ queue.push('hi5', showId);
 queue.push('hi6', showId);
 queue.push('hi7', showId);
 queue.push('hi8', showId);
+console.log('8');
 
 setTimeout(function() {
     console.log('iphits:' + sqsqueue.iphits);
