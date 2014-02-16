@@ -36,7 +36,7 @@ setTimeout(function() {
     console.log('iphits:' + sqsqueue.iphits);
     console.log('ipGohits:' + sqsqueue.ipGohits);
     console.log('receiveCalls:' + sqsqueue.receiveCalls);
-}, 30000);
+}, 15000);
 
     var xx = 6;
 /*
