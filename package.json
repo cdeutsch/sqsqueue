@@ -1,6 +1,6 @@
 {
   "name": "sqsqueue",
-  "description": "Similar to async.queue but backed by AWS SQS",
+  "description": "A modified version of async.queue backed by AWS SQS",
   "main": "./lib/sqsqueue",
   "author": "Christopher Deutsch <cd@cdeutsch.com> (http://cdeutsch.com/)",
   "version": "0.1.01",

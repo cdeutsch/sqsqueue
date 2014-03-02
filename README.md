@@ -1,6 +1,6 @@
 # sqsqueue.js
 
-sqsqueue is a modified version of Caolan McMahon's [async.queue](https://github.com/caolan/async#queue) that is backed by Amazon AWS SQS which means your queued tasks will survive app crashes.
+sqsqueue is a modified version of Caolan McMahon's [async.queue](https://github.com/caolan/async#queue) that is backed by [Amazon AWS SQS](http://aws.amazon.com/sqs/) which means your queued tasks will survive app crashes.
 
 ## Download
 
