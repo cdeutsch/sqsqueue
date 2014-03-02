@@ -18,6 +18,6 @@
       }
   ],
   "dependencies": {
-    "aws-lib": "~0.3.0"
+    "aws-lib": "git://github.com/crdeutsch/aws-lib.git#7f24f2bbcd7153b24c954441c2d9a932ea87f4e2"
   }
 }
