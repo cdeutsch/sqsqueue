@@ -24,6 +24,9 @@ __Arguments__
 * worker(task, callback) - An asynchronous function for processing a queued
   task, which must call its callback(err) argument when finished, with an 
   optional error as an argument.
+  * task object
+    * messageId - SQS MessageId
+    * data - the original data passed in on "push"
 * concurrency - An integer for determining how many worker functions should be
   run in parallel.
 
@@ -40,9 +43,12 @@ methods:
 * concurrency - an integer for determining how many worker functions should be
   run in parallel. This property can be changed after a queue is created to
   alter the concurrency on-the-fly.
-* push(task, [callback]) - add a new task to the queue, the callback is called
-  once the worker has finished processing the task.
+* push(data, [callback]) - add a new task to the queue, the callback is called
+  once the task has been saved in SQS (this is different then async.queue, where the callback is fired once the task is complete)
   instead of a single task, an array of tasks can be submitted. the respective callback is used for every task in the list.
+    * callback(error, messageId)
+      * error - null if there were no errors
+      * SQS MessageId
 
 __Example__
 
@@ -50,7 +56,7 @@ __Example__
 // create a queue object with concurrency 2
 
 var q = sqsqueue.queue(function (task, callback) {
-    console.log('hello ' + task.name);
+    console.log(task.messageId + ' : ' + task.data);
     callback();
 }, 2);
 
@@ -62,16 +68,16 @@ q.init({
 
 // add some items to the queue
 
-q.push({name: 'foo'}, function (err) {
-    console.log('finished processing foo');
+q.push({name: 'foo'}, function (error, messageId) {
+    console.log('Message added to queue: ' + messageId);
 });
-q.push({name: 'bar'}, function (err) {
-    console.log('finished processing bar');
+q.push({name: 'bar'}, function (error, messageId) {
+    console.log('Message added to queue: ' + messageId);
 });
 
 // add some items to the queue (batch-wise)
 
-q.push([{name: 'baz'},{name: 'bay'},{name: 'bax'}], function (err) {
-    console.log('finished processing bar');
+q.push([{name: 'baz'},{name: 'bay'},{name: 'bax'}], function (error, messageId) {
+    console.log('Message added to queue: ' + messageId);
 });
 ```
