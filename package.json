@@ -3,7 +3,7 @@
   "description": "A modified version of async.queue backed by AWS SQS",
   "main": "./lib/sqsqueue",
   "author": "Christopher Deutsch <cd@cdeutsch.com> (http://cdeutsch.com/)",
-  "version": "0.1.01",
+  "version": "0.1.02",
   "repository" : {
       "type" : "git",
       "url" : "https://github.com/crdeutsch/sqsqueue.git"
