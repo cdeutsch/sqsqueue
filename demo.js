@@ -2,9 +2,9 @@ var sqsqueue = require("./lib/sqsqueue");
 
 // Create the configuration
 var config = {
-    awsKey = "TODO:",
-    awsPrivateKey = "TODO:",
-    sqsQueueName = "sqsqueue"
+    awsKey: "TODO:",
+    awsPrivateKey: "TODO:",
+    sqsQueueName: "sqsqueue"
 }
 
 // create a new queue

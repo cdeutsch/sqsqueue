@@ -55,9 +55,9 @@ var q = sqsqueue.queue(function (task, callback) {
 }, 2);
 
 q.init({
-    awsKey = "YOUR KEY",
-    awsPrivateKey = "YOUR PRIVATE KEY",
-    sqsQueueName = "MyQueue"
+    awsKey: "YOUR KEY",
+    awsPrivateKey: "YOUR PRIVATE KEY",
+    sqsQueueName: "MyQueue"
 })
 
 // add some items to the queue
