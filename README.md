@@ -45,7 +45,7 @@ methods:
   alter the concurrency on-the-fly.
 * push(data, [callback]) - add a new task to the queue, the callback is called
   once the task has been saved in SQS (this is different then async.queue, where the callback is fired once the task is complete)
-  instead of a single task, an array of tasks can be submitted. the respective callback is used for every task in the list.
+  Instead of a single task, an array of tasks can be submitted. the respective callback is used for every task in the list.
     * callback(error, messageId)
       * error - null if there were no errors
       * SQS MessageId
@@ -56,7 +56,7 @@ __Example__
 // create a queue object with concurrency 2
 
 var q = sqsqueue.queue(function (task, callback) {
-    console.log(task.messageId + ' : ' + task.data);
+    console.log(task.messageId + ' : ' + task.data.name);
     callback();
 }, 2);
 
